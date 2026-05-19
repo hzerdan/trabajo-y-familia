@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import PublicQR from './pages/PublicQR';
 import Registro from './pages/Registro';
 import Login from './pages/Login';
 import AdminAsistentes from './pages/AdminAsistentes';
@@ -9,11 +10,11 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Ruta pública para registro */}
-        <Route path="/registro" element={<Registro />} />
+        {/* Página inicial: Código QR público de la charla */}
+        <Route path="/" element={<PublicQR />} />
         
-        {/* Redirección por defecto */}
-        <Route path="/" element={<Navigate to="/registro" replace />} />
+        {/* Ruta pública para el formulario de registro */}
+        <Route path="/registro" element={<Registro />} />
         
         {/* Ruta de Login para el administrador */}
         <Route path="/admin/login" element={<Login />} />
@@ -37,8 +38,8 @@ function App() {
           } 
         />
         
-        {/* Captura de rutas no encontradas (redirecciona al formulario público) */}
-        <Route path="*" element={<Navigate to="/registro" replace />} />
+        {/* Captura de rutas no encontradas (redirecciona al QR principal) */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
   );
