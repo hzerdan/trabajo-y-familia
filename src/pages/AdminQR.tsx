@@ -10,17 +10,9 @@ const AdminQR: React.FC = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Obtener la URL base desde la variable de entorno
-    const baseUrl = import.meta.env.VITE_PUBLIC_SITE_URL;
-    
-    if (baseUrl) {
-      setQrUrl(`${baseUrl}/registro`);
-      setIsEnvConfigured(true);
-    } else {
-      // Fallback dinámico si no está configurada
-      setQrUrl(`${window.location.origin}/registro`);
-      setIsEnvConfigured(false);
-    }
+    const baseUrl = import.meta.env.VITE_PUBLIC_SITE_URL || 'https://trabajo-y-familia.vercel.app';
+    setQrUrl(`${baseUrl}/registro`);
+    setIsEnvConfigured(true);
   }, []);
 
   const handleLogout = async () => {
