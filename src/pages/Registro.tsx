@@ -248,7 +248,7 @@ const Registro: React.FC = () => {
               style={{ marginTop: '10px' }}
               disabled={loading}
             >
-              {loading ? 'Enviando registro...' : 'Confirmar Asistencia'}
+              {loading ? 'Guardando...' : 'Guardar'}
             </button>
           </form>
         )}
