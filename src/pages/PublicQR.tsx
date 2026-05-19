@@ -8,8 +8,7 @@ const PublicQR: React.FC = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const baseUrl = import.meta.env.VITE_PUBLIC_SITE_URL || 'https://trabajo-y-familia.vercel.app';
-    setQrUrl(`${baseUrl}/registro`);
+    setQrUrl('https://trabajo-y-familia.vercel.app/registro');
   }, []);
 
   const handleRegisterRedirect = () => {
